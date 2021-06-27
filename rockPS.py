@@ -14,6 +14,11 @@ def main():
     userWins = 0
     # print(userWins)
     computerWins = 0
+    currentWinStreak = 0
+    currentLoseStreak = 0
+    longestWinStreak = 0
+    longestLoseStreak = 0
+    gameTies = 0
     while True:
         choices = ["rock", "paper", "scissors"]
         # print(computerWins)
@@ -27,7 +32,7 @@ def main():
             userChoice = "scissors"
         if userChoice in ['Quit', "quit", "q", "Q"]:
             userChoice = "quit"
-        while userChoice != 'rock' and userChoice != 'paper' and userChoice != 'scissors':
+        while userChoice not in choices:
             userChoice = input('please try again press enter').lower()
             main()
         # while userChoice != userChoice:
@@ -46,7 +51,7 @@ def main():
         print(f"\nYou chose {userChoice}, computer chose {computerRandom}.\n")
         if userChoice == "quit":
             print("You selected", userChoice, "try the game later")
-            print(f"\n both players selected {userChoice}, is a tie. Try again\n")
+
         # Rock
         if userChoice == computerRandom:
             print(f"\n both players selected {userChoice}, is a tie. Try again\n")
@@ -77,10 +82,16 @@ def main():
             else:
                 computerWins += 1
                 print('Scissors cuts paper. user lose ')
+        #ties
+        if userChoice == choices:
+            gameTies += 1
+            print(f"\n both players selected {userChoice}, is a tie. Try again\n")
+
 
         print("")
         print("Player wins: " + str(userWins))
         print("Computer wins: " + str(computerWins))
+        print("Game Ties: " + str(gameTies))
         print("")
 
         repeat = input("Play again? (Y/N) ").lower()
@@ -92,7 +103,6 @@ def main():
 
         print("\n----------------------------\n")
 
-        main()
 
 
     # main()
