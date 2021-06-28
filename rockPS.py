@@ -1,6 +1,10 @@
 # ----- Design Tool - PseudoCode ---------
 # create a count variable for the wins losses and ties
 #  S < R <P < S
+# Create while loop to run the game until the user wants to stop with a break
+# Create if statement to compared the user and the computer choices and to determined the results
+# Print result
+# all code must be inside the function main code block
 
 # ------ Comment Header -----------
 # Name: Jean Carlo Valderrama
@@ -55,43 +59,58 @@ def main():
         # Rock
         if userChoice == computerRandom:
             print(f"\n both players selected {userChoice}, is a tie. Try again\n")
+            gameTies += 1
         elif userChoice == "rock":
             if computerRandom == "scissors":
                 print(" Rock beats Scissors! user win")
                 userWins += 1
+                currentWinStreak += 1
+                longestWinStreak += 1
+
             else:
                 computerWins += 1
+                currentLoseStreak += 1
+                longestLoseStreak += 1
                 print('paper covers rock. user lose ')
 
         # Paper
         elif userChoice == "paper":
             if computerRandom == "rock":
                 userWins += 1
+                currentWinStreak += 1
+                longestWinStreak += 1
                 print("paper covers rock. user wins ")
 
             else:
                 computerWins += 1
+                currentLoseStreak += 1
+                longestLoseStreak += 1
                 print('Scissors cuts paper. user lose ')
 
         # Scissors
         elif userChoice == "scissors":
             if computerRandom == "paper":
                 userWins += 1
+                currentWinStreak += 1
+                longestWinStreak += 1
                 print("Scissors cuts paper. user wins ")
 
             else:
                 computerWins += 1
+                currentLoseStreak += 1
+                longestLoseStreak += 1
                 print('Scissors cuts paper. user lose ')
-        #ties
-        if userChoice == choices:
-            gameTies += 1
-            print(f"\n both players selected {userChoice}, is a tie. Try again\n")
-
 
         print("")
-        print("Player wins: " + str(userWins))
-        print("Computer wins: " + str(computerWins))
+        print("Total wins: " + str(userWins))
+        print("Total loses: " + str(computerWins))
         print("Game Ties: " + str(gameTies))
+        print("Current win streak: " + str(currentWinStreak))
+        print("Current lose streak: " + str(currentLoseStreak))
+        print("Longest win streak: " + str(longestWinStreak))
+        print("Longest lose streak: " + str(longestLoseStreak))
+
+
         print("")
 
         repeat = input("Play again? (Y/N) ").lower()
