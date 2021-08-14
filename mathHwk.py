@@ -28,8 +28,64 @@ def main():
     intDiv = num4 / 2
     print(intDiv)
 
+    # x = 1
+    # while (x < 100):
+    #
+    #     if (x % 3 == 0):
+    #         print(x)
+    #     x += 1
+
+    # for i in range(2, 4, 1):
+    #     print("x")
+
+    # for i in range(2, 4, 2):
+    #     print("x")
+
+    # for i in range(-1, 1):
+    #     print("x")
+    # for i in range(2, 4, -1):
+    #     print("x")
+    # print("Hello" * 5)
+
+    # print("xxxx", end="")
+
+    # x = 0
+    #
+    # x = float(input("Enter a number: "))
+    #
+    # print(x)
+
+    # if (5 == 8):
+    #
+    #     print("True")
+    #
+    # else:
+    #
+    #     print("False")
+    #
+    # print("====" + "\n" * 5 + "====")
+    # x = 5 + 2 * 3 + 6 * 2
+    # print(x)
+
+    # a = 'A'
+    # b = a
+    # c = 'B'
+    # d = b
+    # print(a*2 + b)
+    # print(c,d,a,b)
+    # print('abcd')
+    # print( c + d + a + b)
+    print("new result")
+    x = 5
+    y = 10
+    foo(x, y)
+    print('x =', x)
+    print('y =', y)
 
 
+ def foo(x, y):
+    x = x * 2
+    y = x + y
 
 
 
